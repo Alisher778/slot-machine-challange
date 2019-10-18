@@ -10,7 +10,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			autoStart: 1000,
+			autoStart: 5000,
 			autoStop: 10000,
 			message: { content: 'Please, start the game!', type: '' },
 			start: null,
@@ -65,7 +65,7 @@ class App extends Component {
 	resultHandler = () => {
 		const { wheel, wheel2, wheel3 } = this.state;
 		if (wheel === wheel2 && wheel2 === wheel3) {
-			return this.setState({ message: { content: 'Hurry! JACKPOT', type: 'super' } })
+			return this.setState({ message: { content: 'Hurry! You won $100', type: 'super' } })
 		} else if (wheel === wheel2 || wheel2 === wheel3) {
 			return this.setState({ message: { content: 'Well Done! You Won $20.', type: 'good' } })
 		} else if (wheel === wheel3) {
